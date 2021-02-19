@@ -20,8 +20,7 @@ ios_base::sync_with_stdio(false);
 cin.tie(NULL);
 */
 
-/// to declare: deque < data type > name;
-///// to insert: deque < data type > name;
+
 
 int main()
 {
