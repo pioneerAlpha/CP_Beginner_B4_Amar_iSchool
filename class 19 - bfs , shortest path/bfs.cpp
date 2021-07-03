@@ -20,6 +20,8 @@ cin.tie(NULL);
 
 vector < int > edg[N];
 
+int dis[N];
+
 void bfs(int src , int dis[] , int n)
 {
     for(int i = 1 ; i<=n ; i++) dis[i] = -1;
@@ -55,4 +57,5 @@ int main()
         add(u,v);
         add(v,u);
     }
+    bfs(1,dis,n);
 }
