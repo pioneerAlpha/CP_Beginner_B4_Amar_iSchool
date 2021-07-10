@@ -51,15 +51,13 @@ int main()
         cin>>n>>m;
         for(int i = 1 ; i<=n ; i++){
             cin>>str[i];
-            str[i] += " #";
-            for(int j = m ; j>0; j--) str[i][j] = str[i][j-1];
-            str[i][0] = '#';
+            str[i] = "#" + str[i] + "#";
         }
-        str[0] = str[n+1] = "";
+        str[0] = "";
         for(int i = 0 ; i<=m+1; i++){
             str[0] += "#";
-            str[n+1] += "#";
         }
+        str[n+1] = str[0];
         for(int i = 1 ; i<=n ; i++){
             for(int j = 1 ; j<=m ; j++) if(str[i][j] == 'h') bfs(i,j);
         }
