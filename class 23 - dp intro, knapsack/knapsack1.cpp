@@ -59,12 +59,14 @@ int my_rand(int l, int r)
 
 LL dpp[105][100005];
 
+int val[105] , vol[105];
+
 LL solve(int cur , int cap , int n) /// cap <= 1e5 , n <= 100
 {
     if(cap < 0) return -MAXL;
     if(cur > n) return 0;
     if(dpp[cur][cap] != -1) return dpp[cur][cap];
-    LL ans = max(solve(cur + 1 , cap) , solve(cur + 1 , cap - vol[cur]) + val[cur]);
+    LL ans = max(solve(cur + 1 , cap , n) , solve(cur + 1 , cap - vol[cur] , n) + val[cur]);
     return dpp[cur][cap] = ans;
 }
 
